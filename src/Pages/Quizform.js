@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Quizform.css"
-import { addQuiz } from "../utils/dbmethods";
+import dbMethods from "../utils/dbmethods";
 import NavigationBar from "../Components/NavigationBar"
 
 function Quizform() {
@@ -26,7 +26,7 @@ function Quizform() {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    const addResponse = addQuiz(quizform);
+    const addResponse = dbMethods.addQuiz(quizform);
     addResponse.then((data)=>{
     setSuccessMessage(data)
     })

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import QuizBox from "../Components/Quizbox";
-import { getQuiz } from "../utils/dbmethods";
+import dbMethods from "../utils/dbmethods";
 import NavigationBar from "../Components/NavigationBar";
 
 function Quizlist() {
   const [quizArray, setquizArray] = useState([]);
 
   useEffect(() => {
-    const list = getQuiz();
+    const list = dbMethods.getQuiz();
     list.then((data) => {
       setquizArray(data);
     });

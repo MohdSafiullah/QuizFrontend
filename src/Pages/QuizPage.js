@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { getQuizQuestionList } from "../utils/dbmethods";
+import dbMethods from "../utils/dbmethods";
 import QuestionBox from "../Components/questionBox";
 
 function Quiz() {
@@ -14,7 +14,7 @@ function Quiz() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const list = getQuizQuestionList({ objid: location.state.objid });
+    const list = dbMethods.getQuizQuestionList({ objid: location.state.objid });
     list.then((data) => {
       setQuestionArray(data[0].questionlist);
       setTotalMarks(parseInt(data[0].marksystem))

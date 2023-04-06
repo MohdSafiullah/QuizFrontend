@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addQuestion } from "../utils/dbmethods";
+import dbMethods from "../utils/dbmethods";
 import { Link } from "react-router-dom";
 
 function Editor({objid}) {
@@ -26,7 +26,7 @@ function Editor({objid}) {
       id: objid,
       questionObj: {...question}
      }
-      addQuestion(data);
+      dbMethods.addQuestion(data);
       window.location.reload();
   }
 

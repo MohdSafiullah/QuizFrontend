@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../styles/questionbox.css"
 
 function QuestionBox({ questionData, keyprop, onchange, length , onsubmit, display, displayclass }) {

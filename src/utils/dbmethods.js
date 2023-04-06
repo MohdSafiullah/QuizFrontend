@@ -51,9 +51,11 @@ async function getQuizQuestionList(idobj){
   })
  }
 
-module.exports = {
+const dbMethods = {
     addQuiz: addQuiz,
     getQuiz: getQuiz,
     getQuizQuestionList: getQuizQuestionList,
-    addQuestion :addQuestion
+    addQuestion: addQuestion
 }
+
+export default dbMethods;

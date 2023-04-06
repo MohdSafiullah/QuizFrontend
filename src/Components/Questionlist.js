@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { getQuizQuestionList } from "../utils/dbmethods";
+import dbMethods from "../utils/dbmethods";
 
 function Questionlist(objid){
     const [questionArray, setQuestionArray] = useState([]);
 
 useEffect(()=>{
-  const list =  getQuizQuestionList(objid);
+  const list =  dbMethods.getQuizQuestionList(objid);
   list.then((data)=>{
     setQuestionArray(data[0].questionlist)
   })
