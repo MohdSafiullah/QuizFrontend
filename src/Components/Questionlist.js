@@ -9,7 +9,7 @@ useEffect(()=>{
   list.then((data)=>{
     setQuestionArray(data[0].questionlist)
   })
-}, [])
+})
  
 
     return (

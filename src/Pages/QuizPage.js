@@ -19,7 +19,7 @@ function Quiz() {
       setQuestionArray(data[0].questionlist);
       setTotalMarks(parseInt(data[0].marksystem))
     });
-  }, []);
+  });
 
   const handleDisplay = ()=>{
     setDisplay(prev=>{
