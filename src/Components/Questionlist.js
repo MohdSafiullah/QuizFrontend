@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import dbMethods from "../utils/dbmethods";
 
-function Questionlist(objid){
+function Questionlist({objid}){
     const [questionArray, setQuestionArray] = useState([]);
 
 useEffect(()=>{
@@ -10,7 +10,7 @@ useEffect(()=>{
     setQuestionArray(data[0].questionlist)
   })
 }, [])
-
+ 
 
     return (
         <div id="questionList">
