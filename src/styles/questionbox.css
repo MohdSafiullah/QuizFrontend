@@ -1,0 +1,12 @@
+.questionBox{
+    height: 100vh;
+}
+
+.display{
+    display: block;
+}
+
+.hidden{
+    display: none;
+
+}

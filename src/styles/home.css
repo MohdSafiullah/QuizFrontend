@@ -1,0 +1,19 @@
+.bgcolor{
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("../images/HomeBG.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.whitecontainer{
+    width: 50vw;
+    height: 60vh;
+    text-align: center;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    padding-top: 4rem;
+}

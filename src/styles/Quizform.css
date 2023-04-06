@@ -1,0 +1,14 @@
+form input{
+    width: 80%;
+    margin: 20px auto;
+}
+
+#quizform> div{
+    height: auto;
+}
+
+#quizlist{
+    position: relative;
+    top: 0;
+}
+
