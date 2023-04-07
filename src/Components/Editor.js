@@ -1,8 +1,9 @@
 import { useState } from "react";
 import dbMethods from "../utils/dbmethods";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Editor({objid}) {
+  const navigator = useNavigate();
   const [question, setQuestion] = useState({
     question: "",
     optionA: "",
@@ -27,7 +28,8 @@ function Editor({objid}) {
       questionObj: {...question}
      }
       dbMethods.addQuestion(data);
-      window.location.reload();
+     navigator("/editpage", {state: {id: objid}})
+
   }
 
   return (

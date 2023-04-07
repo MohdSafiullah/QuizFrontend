@@ -46,7 +46,7 @@ async function getQuizQuestionList(idobj){
   .then(respose=>respose.json())
   .then(data=>{
      if(data.success){
-      return {message: true, quizid: data.id};
+      return {message: true, quizid: data._id};
      }
   })
  }

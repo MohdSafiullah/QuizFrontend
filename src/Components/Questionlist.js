@@ -5,7 +5,7 @@ function Questionlist({objid}){
     const [questionArray, setQuestionArray] = useState([]);
 
 useEffect(()=>{
-  const list =  dbMethods.getQuizQuestionList(objid);
+  const list =  dbMethods.getQuizQuestionList({objid: objid});
   list.then((data)=>{
     setQuestionArray(data[0].questionlist)
   })
