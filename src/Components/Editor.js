@@ -29,7 +29,14 @@ function Editor({objid}) {
      }
       dbMethods.addQuestion(data);
      navigator("/editpage", {state: {id: objid}})
-
+     setQuestion({
+      question: "",
+      optionA: "",
+      optionB: "",
+      optionC: "",
+      optionD: "",
+      answer: "",
+    })
   }
 
   return (
