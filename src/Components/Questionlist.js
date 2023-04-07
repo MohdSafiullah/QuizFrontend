@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
 import dbMethods from "../utils/dbmethods";
+import { useNavigate } from "react-router";
 
 function Questionlist({objid}){
+  const navigator = useNavigate();
     const [questionArray, setQuestionArray] = useState([]);
+    const [quizid, setquizid] = useState("");
 
 useEffect(()=>{
   const list =  dbMethods.getQuizQuestionList({objid: objid});
   list.then((data)=>{
     setQuestionArray(data[0].questionlist)
+    setquizid(data[0]._id)
   })
 })
  
+const onDelete = (questionid)=>{
+   dbMethods.deleteQuestion({questionid, quizid});
+   navigator("/editpage", {state: {id: quizid}})
+}
 
     return (
         <div id="questionList">
@@ -22,13 +30,14 @@ useEffect(()=>{
         <div className="d-flex flex-column">
             {
               questionArray.map((question, index)=>{
-                return <div key={index}>
-                   <p className="quetion">{question.question}</p>
-                   <p className="option">{question.optionA}</p>
-                   <p className="option">{question.optionB}</p>
-                   <p className="option">{question.optionC}</p>
-                   <p className="option">{question.optionD}</p>
-                   <p className="answer">{question.answer}</p>
+                return <div className="box-shadow question" key={index}>
+                   <h3 className="quetion">{`${index+1}. ${question.question}`}</h3>
+                   <p className="option">A. {question.optionA}</p>
+                   <p className="option">B. {question.optionB}</p>
+                   <p className="option">C. {question.optionC}</p>
+                   <p className="option">D. {question.optionD}</p>
+                   <p className="answer">Answer: {question.answer}</p>
+                   <button className="btn m-0 btn-shadow btn-danger" onClick={()=>{onDelete(question._id)}}>Delete</button>
                 </div>
               })
             }

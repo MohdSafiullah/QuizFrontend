@@ -5,42 +5,42 @@ function QuestionBox({ questionData, keyprop, onchange, length , onsubmit, displ
 
   return (
     <div className={`${displayclass} questionBox`}>
-      <p>{questionData.question}</p>
+      <h3>{keyprop+1} {questionData.question}</h3>
       <label>
+      A. {questionData.optionA}
         <input
           type="radio"
           name={"q" + keyprop}
           value={questionData.optionA}
           onChange={onchange}
         />
-        {questionData.optionA}
       </label>
       <label>
+      B. {questionData.optionB}
         <input
           type="radio"
           name={"q" + keyprop}
           value={questionData.optionB}
           onChange={onchange}
         />
-        {questionData.optionB}
       </label>
       <label>
+      C. {questionData.optionC}
         <input
           type="radio"
           name={"q" + keyprop}
           value={questionData.optionC}
           onChange={onchange}
         />
-        {questionData.optionC}
       </label>
       <label>
+      D. {questionData.optionD}
         <input
           type="radio"
           name={"q" + keyprop}
           value={questionData.optionD}
           onChange={onchange}
         />
-        {questionData.optionD}
       </label>
 
       {

@@ -1,6 +1,6 @@
-.questionBox{
+/* .questionBox{
     height: 100vh;
-}
+} */
 
 .display{
     display: block;
@@ -9,4 +9,32 @@
 .hidden{
     display: none;
 
+}
+
+.question{
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+}
+
+#questionList h1{
+    text-align: center;
+}
+
+.questionBox label{
+    display: block;
+    font-size: 1.2rem;
+}
+
+#quiz{
+    height: 100vh;
+    overflow-x: hidden;
+    padding-top: 3rem;
+}
+#quiz input {
+    width: auto;
+    margin-left: 10px;
+}
+#quiz .whitecontainer{
+    height: 70vh;
 }

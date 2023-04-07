@@ -16,4 +16,45 @@
     padding: 20px;
     border-radius: 20px;
     padding-top: 4rem;
+    position: relative;
+}
+
+#home h1{
+    font-size: 4rem;
+}
+
+/* Mobile */
+
+@media(max-width: 550px){
+    .whitecontainer{
+      width: 80vw;
+    }
+
+    #home h1{
+        font-size: 2.2rem;
+    }
+
+    .grid4{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(min-width: 550px) and (max-width: 850px){
+    .whitecontainer{
+      width: 80vw;
+    }
+
+    #home h1{
+        font-size: 3.5rem;
+    }
+
+    .grid4{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 850px) and (max-width: 1000px){
+    .grid4{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

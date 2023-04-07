@@ -7,12 +7,12 @@ function Home(){
         <div id="home" className="d-flex flex-column bgcolor">
             <div className="box-shadow whitecontainer">
                 <h1>Quiz Generator</h1>
-                <p>Genearte and take Quiz in minutes</p>
+                <p>Generate and take Quiz in minutes</p>
                 <Link to="/createquiz">
                 <button className="btn btn-shadow btn-blue">Create Quiz</button>
                 </Link>
                 <Link to="/quizlist">
-                <button className="btn btn-shadow btn-pink">Browse Quiz</button>
+                <button className="btn btn-shadow btn-pink">Quiz List</button>
                 </Link>
             </div>
         </div>

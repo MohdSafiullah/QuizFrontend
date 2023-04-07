@@ -9,7 +9,12 @@
   --pink: #f8dcf5;
 }
 
-#quizlist > div{
+body, html{
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#quizlist .whitecontainer{
   width: 95%;
   height: auto;
 }
@@ -40,3 +45,19 @@ nav{
   background: #fff;
   width: 100vw;
 }
+
+.grid4{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  margin-top: 3rem
+}
+
+.absolute{
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 3;
+}
+
+

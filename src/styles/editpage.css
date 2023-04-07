@@ -1,6 +1,6 @@
 #editor{
     min-height: 100vh;
-    width: 40vw;
+    width: 35vw;
     position: fixed;
     top: 0;
     right: 0;
@@ -13,7 +13,7 @@
 }
 
 #editorForm{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -24,3 +24,10 @@
 #editorForm> div{
     margin-top: 20vh;
 }
+
+@media (min-width:700px ) {
+    #editorForm .whitecontainer{
+        width: 50vw;
+       }
+}
+

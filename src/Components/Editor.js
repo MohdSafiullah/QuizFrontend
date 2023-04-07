@@ -45,6 +45,7 @@ function Editor({objid}) {
               value={question.question}
               name="question"
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <div className="col-md-6">
@@ -55,6 +56,7 @@ function Editor({objid}) {
               value={question.optionA}
               name="optionA"
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <div className="col-md-6">
@@ -65,6 +67,7 @@ function Editor({objid}) {
               name="optionB"
               value={question.optionB}
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <div className="col-md-6">
@@ -75,6 +78,7 @@ function Editor({objid}) {
               name="optionC"
               value={question.optionC}
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <div className="col-md-6">
@@ -85,6 +89,7 @@ function Editor({objid}) {
               name="optionD"
               value={question.optionD}
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <div className="col-12">
@@ -95,6 +100,7 @@ function Editor({objid}) {
               value={question.answer}
               name="answer"
               onChange={handleChange}
+              autoComplete="off"
             />
           </div>
           <button className="btn btn-blue" onClick={handleClick}>Add</button>

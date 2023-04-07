@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Quizform.css"
 import dbMethods from "../utils/dbmethods";
-import NavigationBar from "../Components/NavigationBar"
 
 function Quizform() {
   const [quizform, setquizform] = useState({
@@ -34,20 +33,22 @@ function Quizform() {
 
   return (
     <div id="quizform" className="d-flex flex-column bgcolor">
-       <NavigationBar />
       <div className="whitecontainer">
-        <h1>Create a New Quiz</h1>
         {
           (successMessage.message) ? 
            <div>
-             <h1>Quiz created successfuly</h1>
-             <h2>Note the quiz id: {successMessage.quizid} </h2>
+             <h1 className="mb-5">Quiz created successfuly</h1>
+             <h3>Note the quiz id: <br />{successMessage.quizid} </h3>
              <p>The quiz id is required for adding or editing questions</p>
              <Link to="/quizlist">
              <button className="btn btnshadow btn-pink">Get Quiz</button>
              </Link>
            </div>
-         : <form onSubmit={handleSubmit}>
+         :
+         <div>
+        <h1>Create a New Quiz</h1>
+
+         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="quizname"
@@ -55,6 +56,7 @@ function Quizform() {
             placeholder="Quiz Name"
             value={quizform.quizname}
             onChange={onfieldChange}
+            autoComplete="off"
           />
           <input
             type="text"
@@ -63,6 +65,7 @@ function Quizform() {
             placeholder="Description"
             value={quizform.quizdescription}
             onChange={onfieldChange}
+            autoComplete="off"
           />
           <input
             type="text"
@@ -71,6 +74,7 @@ function Quizform() {
             name="marksystem"
             value={quizform.marksystem}
             onChange={onfieldChange}
+            autoComplete="off"
           />
           <input
             type="text"
@@ -78,10 +82,15 @@ function Quizform() {
             className="d-block"
             value={quizform.duration}
             onChange={onfieldChange}
+            autoComplete="off"
             placeholder="Quiz Duration in minutes"
           />
           <button type="submit" className="btn btn-shadow btn-blue">Create Quiz</button>
+          <Link to="/">
+                <button className="btn btn-shadow btn-pink">Back</button>
+                </Link>
         </form>
+        </div>
         }
       </div>
     </div>

@@ -51,11 +51,27 @@ async function getQuizQuestionList(idobj){
   })
  }
 
+ async function deleteQuestion(data){
+  return await fetch(`${BackendURL}deleteQuestion`,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  body: JSON.stringify(data)})
+  .then(respose=>respose.json())
+  .then(data=>{
+     if(data.success){
+      return {...data.response};
+     }
+  })
+ }
+
 const dbMethods = {
     addQuiz: addQuiz,
     getQuiz: getQuiz,
     getQuizQuestionList: getQuizQuestionList,
-    addQuestion: addQuestion
+    addQuestion: addQuestion,
+    deleteQuestion: deleteQuestion
 }
 
 export default dbMethods;

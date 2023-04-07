@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import dbMethods from "../utils/dbmethods";
 import QuestionBox from "../Components/questionBox";
+import { Link } from "react-router-dom";
 
 function Quiz() {
   const location = useLocation();
@@ -46,13 +47,18 @@ function Quiz() {
     navigate("/result", {state: {marks: marks, totalMarks: totalMarks*questionArray.length}})
   }
   return (
-    <div>
-      {questionArray.length === 0 ? (
+    <div className="bgcolor" id="quiz">
+    <div className="whitecontainer">
+    {questionArray.length === 0 ? (
         <div>
           <p>
             Currently, this quiz contain no questions. Once the quetsions are
             added by the creator it will update
           </p>
+          <Link to="/quizlist"> 
+          <button className="btn btn-shadow btn-pink">Exit</button>
+           
+          </Link>
         </div>
       ) : (
         <form action="">
@@ -72,6 +78,8 @@ function Quiz() {
           })}
         </form>
       )}
+    </div>
+    
     </div>
   );
 }
